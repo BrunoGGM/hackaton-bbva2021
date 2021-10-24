@@ -11,6 +11,15 @@ class CardType extends Model
 
     
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'description',
+    ];
+
+    /**
      * Get the cards associated with the card type.
      */
     public function cards()

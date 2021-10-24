@@ -25,7 +25,8 @@ class CardTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        CardType::create($request->all());
+        return 'created';
     }
 
     /**
@@ -48,7 +49,10 @@ class CardTypeController extends Controller
      */
     public function update(Request $request, CardType $cardType)
     {
-        //
+        $cardType->update($request->all());
+        $cardType->save();
+
+        return 'updated';
     }
 
     /**
@@ -59,6 +63,8 @@ class CardTypeController extends Controller
      */
     public function destroy(CardType $cardType)
     {
-        //
+        $cardType->delete();
+
+        return 'deleted';
     }
 }
