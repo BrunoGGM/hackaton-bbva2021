@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('type-of-card', 'CardTypeController');
+Route::apiResource('entity', 'EntityController');
+Route::apiResource('chargeback', 'ChargebackController');
+

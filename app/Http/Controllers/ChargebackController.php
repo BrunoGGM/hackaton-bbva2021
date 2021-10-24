@@ -14,7 +14,7 @@ class ChargebackController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Chargeback::all(), 200);
     }
 
     /**
@@ -25,7 +25,8 @@ class ChargebackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $chargeback = Chargeback::create($request->all());
+        return response()->json($chargeback, 201);
     }
 
     /**
@@ -36,7 +37,7 @@ class ChargebackController extends Controller
      */
     public function show(Chargeback $chargeback)
     {
-        //
+        return response()->json($chargeback, 200);
     }
 
     /**
@@ -48,7 +49,8 @@ class ChargebackController extends Controller
      */
     public function update(Request $request, Chargeback $chargeback)
     {
-        //
+        $chargeback->fill($request->all());
+        return response()->json(200);
     }
 
     /**
@@ -59,6 +61,7 @@ class ChargebackController extends Controller
      */
     public function destroy(Chargeback $chargeback)
     {
-        //
+        $chargeback->delete();
+        return response()->json(202);
     }
 }
