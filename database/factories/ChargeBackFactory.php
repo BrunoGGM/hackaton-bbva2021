@@ -23,7 +23,7 @@ class ChargeBackFactory extends Factory
     {
         $chargeback = ['1' => '4837','2' => '68','3' => '10'];
         return [
-            'card_id'=> $this->faker->numberBetween(3,12),
+            'card_id'=> $this->faker->numberBetween(1,3000),
             'sell_date' => $this->faker->dateTime(),
             'amount' => floor($this->faker->numberBetween(150,10100) / 10) * 10,
             'authorization_number' => sprintf("%06d", $this->faker->numberBetween(0,100000)),
@@ -41,7 +41,7 @@ class ChargeBackFactory extends Factory
             'locality_id' => $this->faker->numberBetween(0,302130),
             'city_id' => $this->faker->numberBetween(1,2498),
             'state_id' => $this->faker->numberBetween(1,32),
-            'country_id' => $this->faker->numberBetween(1,242),
+            'country_id' => 140,
             'zip_code' => sprintf("%06d", $this->faker->numberBetween(1,99999)),
             'chargeback_types_id' => $chargeback[$this->faker->numberBetween(1,3)]
         ];

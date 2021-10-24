@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             EntitySeeder::class,
         ]);
 
-        \App\Models\Card::factory(10)->create();
-        \App\Models\Chargeback::factory(100)->create();
+        \App\Models\Card::factory(3000)->create();
+        \App\Models\Chargeback::factory(10000)->create();
     }
 }
