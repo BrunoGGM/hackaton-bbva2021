@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\National;
 use Illuminate\Database\Seeder;
 
 class NationalSeeder extends Seeder
@@ -13,6 +14,7 @@ class NationalSeeder extends Seeder
      */
     public function run()
     {
-        //
+        National::create(['description' => 'Nacional']);
+        National::create(['description' => 'Internacional']);
     }
 }

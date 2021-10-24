@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CardType;
 use Illuminate\Database\Seeder;
 
 class CardTypeSeeder extends Seeder
@@ -13,6 +14,7 @@ class CardTypeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        CardType::create(['description'=>'Credito']);
+        CardType::create(['description'=>'Debito']);
     }
 }

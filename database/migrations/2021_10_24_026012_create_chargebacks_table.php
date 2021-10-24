@@ -15,13 +15,14 @@ class CreateChargebacksTable extends Migration
     {
         Schema::create('chargebacks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("card_id");
             $table->date('sell_date');
             $table->decimal('amount', $precision = 12, $scale = 2);
             $table->string("authorization_number");
             $table->string("case_number");
             $table->string("contract", 15);
-            $table->unsignedInteger("entity_id");
-            $table->unsignedInteger("operative_id");
+            $table->unsignedBigInteger("entity_id");
+            $table->unsignedBigInteger("operative_id");
             $table->string("buyer_name");
             $table->string("buyer_surname");
             $table->string("phone_number", 10);
@@ -34,7 +35,16 @@ class CreateChargebacksTable extends Migration
             $table->unsignedBigInteger("state_id");
             $table->unsignedBigInteger("country_id");
             $table->string("zip_code");
-            $table->unsignedBigInteger("chargeback_type");
+            $table->unsignedBigInteger("chargeback_types_id");
+
+            $table->foreign('operative_id')->references('id')->on('operative_types');
+            $table->foreign('entity_id')->references('id')->on('entities');
+            $table->foreign('chargeback_types_id')->references('id')->on('chargeback_types');
+            $table->foreign('card_id')->references('id')->on('cards');
+            $table->foreign('locality_id')->references('id')->on('localities');
+            $table->foreign('city_id')->references('id')->on('cities');
+            $table->foreign('state_id')->references('id')->on('states');
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->timestamps();
         });
     }

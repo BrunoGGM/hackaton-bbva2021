@@ -19,6 +19,14 @@ class DatabaseSeeder extends Seeder
             StateSeeder::class,
             CitySeeder::class,
             LocalitySeeder::class,
+            CardTypeSeeder::class,
+            ChargebackTypeSeeder::class,
+            NationalSeeder::class,
+            OperativeTypeSeeder::class,
+            EntitySeeder::class,
         ]);
+
+        \App\Models\Card::factory(10)->create();
+        \App\Models\Chargeback::factory(100)->create();
     }
 }
