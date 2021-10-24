@@ -14,7 +14,9 @@ class CardTypeController extends Controller
      */
     public function index()
     {
-        //
+        $cardTypes = CardType::all();
+
+        return response()->json($cardTypes, 200);
     }
 
     /**
@@ -26,7 +28,7 @@ class CardTypeController extends Controller
     public function store(Request $request)
     {
         CardType::create($request->all());
-        return 'created';
+        return response()->json(['success' => 'Card Type Created Successfully'], 201);
     }
 
     /**
@@ -52,7 +54,7 @@ class CardTypeController extends Controller
         $cardType->update($request->all());
         $cardType->save();
 
-        return 'updated';
+        return response()->json(['success' => 'Card Type Updated Successfully'], 200);
     }
 
     /**
@@ -65,6 +67,6 @@ class CardTypeController extends Controller
     {
         $cardType->delete();
 
-        return 'deleted';
+        return response()->json(['success' => 'Card Type Deleted Successfully'], 200);
     }
 }

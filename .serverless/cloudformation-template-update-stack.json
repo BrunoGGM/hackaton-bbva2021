@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/red-riding-hood/dev/1634999121330-2021-10-23T14:25:21.330Z/red-riding-hood.zip"
+          "S3Key": "serverless/red-riding-hood/dev/1635055903194-2021-10-24T06:11:43.194Z/red-riding-hood.zip"
         },
         "Handler": "public/index.php",
         "Runtime": "provided.al2",
@@ -195,7 +195,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/red-riding-hood/dev/1634999121330-2021-10-23T14:25:21.330Z/red-riding-hood.zip"
+          "S3Key": "serverless/red-riding-hood/dev/1635055903194-2021-10-24T06:11:43.194Z/red-riding-hood.zip"
         },
         "Handler": "artisan",
         "Runtime": "provided.al2",
@@ -217,24 +217,24 @@
         "ArtisanLogGroup"
       ]
     },
-    "WebLambdaVersion95nJb88Eb0hXKCbzqFjKfMX9vurJQ1Efk8SBFS6AZY0": {
+    "WebLambdaVersionvDXgjRrnvfCoNC1uUkHbmQS68WqvA8rAyNLW0L0KcE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WebLambdaFunction"
         },
-        "CodeSha256": "9OTYOqP46w28IUrpNrzSh0DFP4i9cvAaVTU+tgLAeYI="
+        "CodeSha256": "c50/zCT6AvNjcDPr0Ux3MZQNHFRDQHfOYffbURKr+Yc="
       }
     },
-    "ArtisanLambdaVersionPtDdZOspWNr86TPgu1x3x3QgNYu8Pqkpf4zdzLzQw": {
+    "ArtisanLambdaVersion9fKF8EE72XrLlox3horoy13xJ4ZgiUKfBAMt0xw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ArtisanLambdaFunction"
         },
-        "CodeSha256": "9OTYOqP46w28IUrpNrzSh0DFP4i9cvAaVTU+tgLAeYI="
+        "CodeSha256": "c50/zCT6AvNjcDPr0Ux3MZQNHFRDQHfOYffbURKr+Yc="
       }
     },
     "HttpApi": {
@@ -345,7 +345,7 @@
     "WebLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WebLambdaVersion95nJb88Eb0hXKCbzqFjKfMX9vurJQ1Efk8SBFS6AZY0"
+        "Ref": "WebLambdaVersionvDXgjRrnvfCoNC1uUkHbmQS68WqvA8rAyNLW0L0KcE"
       },
       "Export": {
         "Name": "sls-red-riding-hood-dev-WebLambdaFunctionQualifiedArn"
@@ -354,7 +354,7 @@
     "ArtisanLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ArtisanLambdaVersionPtDdZOspWNr86TPgu1x3x3QgNYu8Pqkpf4zdzLzQw"
+        "Ref": "ArtisanLambdaVersion9fKF8EE72XrLlox3horoy13xJ4ZgiUKfBAMt0xw"
       },
       "Export": {
         "Name": "sls-red-riding-hood-dev-ArtisanLambdaFunctionQualifiedArn"
